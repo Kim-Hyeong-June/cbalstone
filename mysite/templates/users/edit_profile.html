@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="mb-0">Edit Profile</h2>
+          </div>
+          <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username:</label>
+                {{ form.username }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">Name:</label>
+                {{ form.name }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email:</label>
+                {{ form.email }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.phone_number.id_for_label }}">Phone Number:</label>
+                {{ form.phone_number }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.age.id_for_label }}">Age:</label>
+                {{ form.age }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.location.id_for_label }}">Location:</label>
+                {{ form.location }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.user_type.id_for_label }}">User Type:</label>
+                {{ form.user_type }}
+              </div>
+              
+              <div class="form-group">
+                <label for="{{ form.website1.id_for_label }}">Website 1:</label>
+                {{ form.website1 }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.website2.id_for_label }}">Website 2:</label>
+                {{ form.website2 }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.profile_photo.id_for_label }}">Profile Photo:</label>
+                {{ form.profile_photo }}
+              </div>
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
